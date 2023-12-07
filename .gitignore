@@ -3,3 +3,4 @@ vivado/
 sim/
 !sim/Makefile
 sim_filelist.f
+__pycache__/
