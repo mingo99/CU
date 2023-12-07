@@ -1,0 +1,43 @@
+`define PEA11_ROW 1
+`define PEA11_COL 8
+`define PEA11_WGT_WIDTH 8*`PEA11_ROW
+`define PEA11_IFM_WIDTH 8*(`PEA11_ROW+`PEA11_COL-1)
+
+`define TILE_RUN `PEA11_COL
+`define TILE_LEN 16
+`define RF_AWIDTH $clog2(`TILE_LEN)
+`define PE_DWIDTH 16
+`define TC_COL_WIDTH 6
+`define TC_ROW_WIDTH 6
+`define PC_COL_WIDTH 5
+`define PC_ROW_WIDTH 5
+
+`define CHN_64 1
+`define CHN_128 2
+`define CHN_256 4
+`define CHN_512 8
+`define CHN_1024 16
+`define CHN_2048 32
+`define CHN_WIDTH 6
+`define CHN_OFT_WIDTH 6
+
+`define FMS_WIDTH 8
+`define OFM_WIDTH 32
+
+// For simulation
+`define CHI (`CHN_64<<`CHN_OFT_WIDTH)
+`define CHO (`CHN_64<<`CHN_OFT_WIDTH)
+`define IFM_SIZE 8'd20
+`define STRIDE 1
+`define OFM_SIZE `IFM_SIZE
+
+`define TILE_ROW_OFFSET `OFM_SIZE % `TILE_RUN
+`define TILE_COL_OFFSET `OFM_SIZE % `TILE_LEN
+`define TC_ROW_MAX `OFM_SIZE / `TILE_RUN
+`define TC_COL_MAX `OFM_SIZE / `TILE_LEN
+
+`define TILE_ROW_NUM (`OFM_SIZE/`TILE_RUN+1)
+`define TILE_COL_NUM (`OFM_SIZE/`TILE_LEN+1)
+`define IFM_LEN `TILE_ROW_NUM*`TILE_COL_NUM*`CHO*`CHI*(`PEA11_ROW+`PEA11_COL-1)*`TILE_LEN
+`define WGT_LEN `TILE_ROW_NUM*`TILE_COL_NUM*`CHO*`CHI
+
