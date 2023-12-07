@@ -1,0 +1,5 @@
+data/*
+vivado/
+sim/
+!sim/Makefile
+sim_filelist.f
