@@ -253,7 +253,7 @@ class ConvData:
                         if radix == "hex":
                             s = bin2hex(s) + " "
                         f.write(s)
-                        if (col + 1) % 16 == 0:
+                        if (col + 1) % 16 == 0 and self.out_size[1] > 16:
                             f.write("\n")
                     f.write("\n")
                 f.write("\n")

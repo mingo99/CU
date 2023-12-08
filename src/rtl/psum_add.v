@@ -1,7 +1,7 @@
 ///==------------------------------------------------------------------==///
 /// Conv kernel: adder tree of psum module
 ///==------------------------------------------------------------------==///
-/// Two stages pipelined adder tree
+
 module psum_add #(
     parameter DWIDTH = 32,
     parameter PE_DWIDTH = 16
