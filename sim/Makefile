@@ -19,10 +19,10 @@ FILELIST := ../src/filelist.tcl
 LOG_DIR := ./logs
 
 # Macro for simulation
-CHNOFTWIDTH := 1
-TILE_H:= 8 
-TILE_W:= 8 
-IFMSIZE := 16 
+CHNOFTWIDTH := 3
+TILE_H:= 16 
+TILE_W:= 16 
+IFMSIZE := 25 
 CHI := $(shell echo $$((2**$(CHNOFTWIDTH))))
 CHO := $(shell echo $$((2**$(CHNOFTWIDTH))))
 STRIDE := 0

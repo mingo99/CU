@@ -28,7 +28,7 @@ def read_ofm_line(file, ofm_size, cho, tile_len):
         line_with_channel = []
 
         oft = ofm_size % tile_len
-        print(f"oft: {oft}")
+
         if oft != 0:
             tile_last = line.pop()
             tile_last_with_chan = np.array(
@@ -64,7 +64,7 @@ def get_act_ofm(tile_height, ofm_size, cho, tile_width, stride):
         valid_line_num = ofm_size % tile_height
     else:
         valid_line_num = tile_height
-    print(valid_line_num)
+    # print(valid_line_num)
 
     print("Extracting actual ofm file: ")
     for i in range(valid_line_num):

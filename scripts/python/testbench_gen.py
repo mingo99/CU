@@ -154,7 +154,6 @@ class ConvData:
         )
 
         with open(filename, "w", encoding="utf-8") as f:
-            print(self.pea_size)
             for nr in range(self.tile_row_num):
                 for nt in range(self.tile_col_num):
                     for _ in range(self.out_channels):

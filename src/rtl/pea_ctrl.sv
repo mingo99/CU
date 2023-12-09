@@ -149,10 +149,10 @@ module pea_ctrl #(
     wire ifm_rd_col_msk;
     assign ifm_rd_col_msk = tile_col_last ? ifm_rd_col_msk_pre | ic_done : ifm_rd_col_msk_pre;
 
-    assign ifm_read = (start_conv | (|curr_state[2:1])) & ifm_rd_col_msk;
-    assign wgt_read = start_conv | (~conv_done & ic_done);
+    assign ifm_read = (|curr_state[2:1]) & (~ic_done) & ifm_rd_col_msk;
+    assign wgt_read = curr_state[1];
 
-    assign cnt_valid = |curr_state[2:1];
+    assign cnt_valid = curr_state[2];
 
     // PE data valid signal for different stride(1/2)
     reg pvalid_s1;
